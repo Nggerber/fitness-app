@@ -7,7 +7,7 @@ router.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-//route to display the excercise html
+//route to display the exercise html
 router.get("/exercise", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });

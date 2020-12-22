@@ -27,6 +27,7 @@ router.post("/api/workouts", (req, res) => {
 //get route for range
 
 router.get("/api/workouts/range", (req, res) => {
+    console.log("Hello")
     Workout.find({})
         .then(dbWorkout => {
             res.json(dbWorkout);
@@ -39,8 +40,8 @@ router.get("/api/workouts/range", (req, res) => {
 //update workouts based on id
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findOneAndUpdate(
-        { _id: req.poarams.id },
-        { $push: { excercises: req.body } },
+        { _id: req.params.id },
+        { $push: { exercises: req.body } },
         { new: true }
 
     )
